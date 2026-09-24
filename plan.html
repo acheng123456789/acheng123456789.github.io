@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>训练与体型改善建议</title><style>
+:root{--bg:#F4F5F7;--card:#fff;--line:#ECEDF1;--dim:#6B6577;--dim2:#9E99A8;
+--acc:#00C86F;--ink:#241F2E;--ink2:#6B6577;--ink3:#9E99A8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;
+  font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC",
+  "Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Microsoft YaHei",
+  system-ui,sans-serif;padding-bottom:22px}
+.hd{background:linear-gradient(135deg,#00DB8B 0%,#00C86F 55%,#00A862 100%);
+  color:#fff;padding:26px 18px 32px}
+.hd .badge{display:inline-block;background:rgba(255,255,255,.22);border-radius:20px;
+  padding:4px 12px;font-size:11.5px;font-weight:700;margin-bottom:10px}
+.hd h1{font-size:25px;font-weight:800;letter-spacing:-.4px}
+.hd .sub2{font-size:11.5px;opacity:.92;margin-top:6px;line-height:1.75}
+.wrap{max-width:760px;margin:-24px auto 0;padding:0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:16px;margin-bottom:13px;box-shadow:0 6px 18px rgba(30,40,60,.06)}
+h2{font-size:15px;margin:0 0 12px;padding-left:9px;border-left:3px solid var(--acc)}
+.desc{color:var(--dim);font-size:11.5px;margin:-4px 0 10px}
+.desc em{font-style:normal;color:var(--acc);font-weight:700}
+/* 现状 */
+.stat4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.st{background:#F7F9FA;border-radius:12px;padding:10px 8px;text-align:center}
+.st b{display:block;font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
+.st b small{font-size:10px;font-weight:700;color:var(--dim);margin-left:1px}
+.st span{font-size:10.5px;color:var(--dim)}
+.st.hi{background:#E9F9F1}
+.st.hi b{color:var(--acc)}
+.bmi{margin-bottom:14px}
+.bmi-bar{position:relative;height:10px;border-radius:5px;overflow:visible;
+  background:linear-gradient(90deg,#9ED8F5 0%,#7EDDAF 27%,#F5C96B 63%,#F08A8A 100%)}
+.bmi-bar i{position:absolute;top:-4px;width:4px;height:18px;border-radius:2px;
+  background:#241F2E;box-shadow:0 0 0 2px #fff}
+.bmi-lb{display:flex;justify-content:space-between;font-size:10px;color:var(--dim2);
+  margin-top:5px}
+.bmi-txt{font-size:12px;color:var(--ink2);margin-top:9px;line-height:1.7}
+.bmi-txt b{color:var(--acc)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px}
+.kpi{background:#F7F9FA;border-radius:13px;padding:11px 12px}
+.kpi .v{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums;
+  letter-spacing:-.3px}
+.kpi .v small{font-size:11px;font-weight:700;color:var(--dim);margin-left:2px}
+.kpi .l{font-size:11.5px;color:var(--dim);margin-top:4px}
+.kpi .e{font-size:10.5px;color:var(--dim2);margin-top:2px}
+.note{font-size:11.5px;color:var(--ink2);background:#F7F9FA;border-radius:11px;
+  padding:10px 12px;margin-top:12px;line-height:1.85}
+.note b{color:var(--acc)}
+/* 诊断 */
+details.dg{border:1px solid var(--line);border-radius:13px;margin-top:9px;
+  overflow:hidden;background:#FCFDFD}
+details.dg>summary{display:flex;align-items:center;gap:9px;padding:11px 13px;
+  cursor:pointer;list-style:none}
+details.dg>summary::-webkit-details-marker{display:none}
+details.dg>summary:before{content:none}
+.dg-n{flex:none;width:20px;height:20px;border-radius:50%;background:#E9F9F1;
+  color:var(--acc);font-size:11px;font-weight:800;display:flex;align-items:center;
+  justify-content:center}
+.dg-t{flex:1;min-width:0}
+.dg-t b{display:block;font-size:12.5px}
+.dg-t em{display:block;font-style:normal;font-size:10.5px;color:var(--dim2);margin-top:1px}
+.dg-l{margin:0;padding:0 14px 12px 42px;font-size:11.5px;color:var(--ink2);
+  line-height:1.85}
+.dg-l li{margin-bottom:3px}
+.dg-l b{color:var(--acc)}
+/* 标签页 */
+.tabsbox{position:relative}
+.r{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{flex:1;min-width:84px;text-align:center;padding:8px 6px;border-radius:11px;
+  border:1px solid var(--line);background:#F7F9FA;font-size:11.5px;font-weight:700;
+  color:var(--ink2);cursor:pointer;transition:background .18s,color .18s}
+.pane{display:none}
+/* 阶段 */
+.stage-hd{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
+.stage-hd b{font-size:15px}
+.stage-hd span{font-size:11.5px;color:var(--dim2)}
+.stage-w{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px}
+.stage-w>div{background:#F7F9FA;border-radius:11px;padding:9px 11px}
+.stage-w span{display:block;font-size:10.5px;color:var(--dim)}
+.stage-w b{font-size:13.5px;font-variant-numeric:tabular-nums}
+.stage-l{margin:0;padding-left:18px;font-size:11.5px;color:var(--ink2);
+  line-height:1.9}
+.stage-l b{color:var(--acc)}
+/* 训练 */
+.plan-hd{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
+.plan-hd b{font-size:15px}
+.plan-tag{font-size:10.5px;font-weight:700;color:var(--acc);background:#E9F9F1;
+  border-radius:20px;padding:2px 9px}
+.ex{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  margin-top:10px}
+.ex-n{font-size:13px;font-weight:650}
+.ex-s{font-size:12px;font-weight:800;color:var(--acc);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.ex-t{font-size:11px;color:var(--dim2);margin-top:2px;line-height:1.6}
+.week{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.wk-h{font-size:12px;font-weight:700;color:var(--ink2);margin-bottom:8px}
+.wk-g{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.wd{background:#E9F9F1;border-radius:11px;padding:8px 4px;text-align:center;
+  font-size:10.5px;color:#0B7A48;font-weight:650}
+.wd b{display:block;font-size:12px;color:var(--acc);margin-bottom:2px}
+.wd.rest{background:#F4F5F7;color:var(--dim2)}
+.wd.rest b{color:var(--dim2)}
+/* 饮食 */
+.meal{margin-top:12px}
+.ml{display:flex;gap:10px;align-items:baseline;padding:7px 0;
+  border-bottom:1px solid var(--line)}
+.ml:last-child{border-bottom:0}
+.ml b{flex:none;width:48px;font-size:12px;color:var(--acc)}
+.ml span{font-size:11.5px;color:var(--ink2)}
+/* 清单 */
+.cks{display:grid;gap:8px}
+.ck{display:flex;align-items:center;gap:9px;font-size:12.5px;cursor:pointer;
+  padding:9px 11px;background:#F7F9FA;border-radius:11px}
+.ck input{width:17px;height:17px;flex:none;accent-color:var(--acc)}
+.ck input:checked+span{color:var(--dim2);text-decoration:line-through}
+/* 注意 */
+.card.warn{border-color:#FBE3E3;background:#FFFDFD}
+.card.warn h2{border-left-color:#F08A8A}
+.wn{margin:0;padding-left:18px;font-size:11.5px;color:var(--ink2);line-height:1.9}
+.wn b{color:#D9534F}
+.foot{color:var(--dim2);font-size:11px;text-align:center;padding:8px 0 0;
+  line-height:1.8}
+@media (min-width:560px){.hd h1{font-size:30px}.stage-w{grid-template-columns:repeat(4,1fr)}}
+
+#ph-0:checked ~ .tabs .tab:nth-of-type(1){background:#00C86F;color:#fff;border-color:#00C86F}
+#ph-0:checked ~ .panes .pn0{display:block}
+#ph-1:checked ~ .tabs .tab:nth-of-type(2){background:#00C86F;color:#fff;border-color:#00C86F}
+#ph-1:checked ~ .panes .pn1{display:block}
+#ph-2:checked ~ .tabs .tab:nth-of-type(3){background:#00C86F;color:#fff;border-color:#00C86F}
+#ph-2:checked ~ .panes .pn2{display:block}
+#pl-0:checked ~ .tabs .tab:nth-of-type(1){background:#00C86F;color:#fff;border-color:#00C86F}
+#pl-0:checked ~ .panes .pn0{display:block}
+#pl-1:checked ~ .tabs .tab:nth-of-type(2){background:#00C86F;color:#fff;border-color:#00C86F}
+#pl-1:checked ~ .panes .pn1{display:block}
+#pl-2:checked ~ .tabs .tab:nth-of-type(3){background:#00C86F;color:#fff;border-color:#00C86F}
+#pl-2:checked ~ .panes .pn2{display:block}
+#pl-3:checked ~ .tabs .tab:nth-of-type(4){background:#00C86F;color:#fff;border-color:#00C86F}
+#pl-3:checked ~ .panes .pn3{display:block}
+</style></head><body>
+
+<div class="hd">
+  <div class="badge">基于 81.5kg → 目标 68kg · 6 个月计划</div>
+  <h1>训练与体型改善建议</h1>
+  <div class="sub2">依据你近 21 个月的运动数据（2025-01 ~ 2026-09）推导<br>
+  每条结论都附数据佐证 · 手机可点</div>
+</div>
+<div class="wrap">
+
+<div class="card">
+  <h2>① 现状体检</h2>
+  <div class="stat4">
+    <div class="st"><b>168<small>cm</small></b><span>身高</span></div>
+    <div class="st"><b>81.5<small>kg</small></b><span>当前体重</span></div>
+    <div class="st hi"><b>28.9</b><span>BMI</span></div>
+    <div class="st"><b>32<small>岁</small></b><span>年龄</span></div>
+  </div>
+  <div class="bmi">
+    <div class="bmi-bar">
+      <i style="left:76.9%"></i>
+    </div>
+    <div class="bmi-lb"><span>偏瘦 18.5</span><span>正常 24</span>
+      <span>超重 28</span><span>肥胖 32</span></div>
+    <div class="bmi-txt">你的 BMI <b>28.9</b>，按中国标准属于
+      <b>肥胖区间</b>；同身高 BMI 24 对应体重约 <b>67.7kg</b>。</div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="v">1,710<small>kcal</small></div>
+      <div class="l">基础代谢 BMR</div><div class="e">躺着不动的日消耗</div></div>
+    <div class="kpi"><div class="v">2,740<small>kcal</small></div>
+      <div class="l">每日总消耗 TDEE</div><div class="e">按日均 16,255 步 + 每周 4~5 练估</div></div>
+  </div>
+  <div class="note">只要每天吃的比 TDEE 少 <b>500~700 kcal</b>，
+    一周就能稳定掉 <b>0.5~0.7kg</b>——这是不反弹的速度上限。</div>
+</div><div class="card"><h2>② 数据诊断</h2><div class="desc">点开每一条看数据佐证　<em>结论全部来自你自己的记录</em></div><details class="dg"><summary>
+        <span class="dg-n">1</span>
+        <span class="dg-t"><b>量已经够了，结构不对</b><em>9 月 23 次 / 16.5 小时</em></span>
+        </summary><ul class="dg-l"><li>骑行 7.97h + 徒步 4.42h = 12.4h，占全月 <b>75%</b> 时长</li><li>但这两项平均心率只有 <b>121 / 109</b>，属于最低强度</li><li>心率区间统计：<b>Z1 恢复区占 52%</b>，Z2 只占 30%</li><li>结论：时间花了，但大部分没花在燃脂效率最高的区间</li></ul></details><details class="dg"><summary>
+        <span class="dg-n">2</span>
+        <span class="dg-t"><b>跑步强度偏高，反而不好减脂</b><em>5 次 25.4km · 配速 6'16&quot;</em></span>
+        </summary><ul class="dg-l"><li>平均心率 <b>167</b>，约为最大心率（188）的 <b>89%</b></li><li>这个强度处在「中高」区，供能依赖糖原，脂肪参与比例低</li><li>而且很难坚持更久——单次 30 分钟就到顶了</li><li>结论：把配速放慢到 <b>7'00"~7'30"</b>、心率 130~145，时间拉长到 40~50 分钟，减脂效果更好</li></ul></details><details class="dg"><summary>
+        <span class="dg-n">3</span>
+        <span class="dg-t"><b>力量训练严重不足</b><em>近 6 个月仅 3 次</em></span>
+        </summary><ul class="dg-l"><li>手表口径：2026-04 至 09 的力量记录只有 <b>3 次</b></li><li>你手动补录的器械训练也只有 9/15 胸、9/17 背</li><li>力量训练决定<b>体型线条</b>；减重时它决定掉的是脂肪还是肌肉</li><li>想要「修长均衡」，练腿、肩、核心比多跑 10 公里更关键</li></ul></details><details class="dg"><summary>
+        <span class="dg-n">4</span>
+        <span class="dg-t"><b>好习惯刚建立，现在该提质</b><em>7 月 24 次 → 9 月 23 次</em></span>
+        </summary><ul class="dg-l"><li>此前 2~6 月每月只有 1~6 次，7 月起跃升到 15~24 次</li><li>说明<b>频率已经不是问题</b>，问题在强度和结构</li><li>接下来的重点：把有氧「降强度、拉时长」，把力量「补齐」</li></ul></details></div><div class="card"><h2>③ 三阶段目标</h2><div class="desc">点上面的标签切换阶段　<em>节奏：每周 0.5~0.7kg，不掉肌肉</em></div><div class="tabsbox"><input class="r" type="radio" name="g-ph" id="ph-0" checked><input class="r" type="radio" name="g-ph" id="ph-1"><input class="r" type="radio" name="g-ph" id="ph-2"><div class="tabs"><label class="tab" for="ph-0">阶段一 · 打地基</label><label class="tab" for="ph-1">阶段二 · 稳步减脂</label><label class="tab" for="ph-2">阶段三 · 塑形维持</label></div><div class="panes"><div class="pane pn0">
+      <div class="stage-hd"><b>阶段一 · 打地基</b><span>第 1~8 周</span></div>
+      <div class="stage-w">
+        <div><span>体重</span><b>81.5 → 76.5 kg</b></div>
+        <div><span>每周减</span><b>0.62 kg</b></div>
+        <div><span>每日热量</span><b>2,200 kcal</b></div>
+        <div><span>蛋白质</span><b>140~150g</b></div>
+      </div>
+      <ul class="stage-l"><li>建立力量训练习惯：<b>每周 3 次</b>，先把动作做标准，不追重量</li><li>有氧把强度降下来：跑步心率控制在 <b>130~145</b>，能边跑边说话的强度</li><li>骑行/徒步从「占 75%」降到 50% 以下，把时间让给跑步和力量</li><li>目标：8 周掉 5kg，同时力量动作全部学会</li></ul></div><div class="pane pn1">
+      <div class="stage-hd"><b>阶段二 · 稳步减脂</b><span>第 9~20 周</span></div>
+      <div class="stage-w">
+        <div><span>体重</span><b>76.5 → 71.0 kg</b></div>
+        <div><span>每周减</span><b>0.46 kg</b></div>
+        <div><span>每日热量</span><b>2,000 kcal</b></div>
+        <div><span>蛋白质</span><b>145~155g</b></div>
+      </div>
+      <ul class="stage-l"><li>力量升级：重量每 2 周尝试 +2.5kg 或 +1 次</li><li>加入 <b>每周 1 次 HIIT</b>（爬楼梯冲刺 / 跑步间歇），拉高代谢</li><li>饮食开始称重记录，蛋白质必须达标</li><li>目标：12 周掉 5.5kg，腰围明显变化</li></ul></div><div class="pane pn2">
+      <div class="stage-hd"><b>阶段三 · 塑形维持</b><span>第 21 周起</span></div>
+      <div class="stage-w">
+        <div><span>体重</span><b>71.0 → 68.0 kg</b></div>
+        <div><span>每周减</span><b>0.38 kg</b></div>
+        <div><span>每日热量</span><b>2,400 kcal</b></div>
+        <div><span>蛋白质</span><b>150~160g</b></div>
+      </div>
+      <ul class="stage-l"><li>热量回到维持水平，不再制造大缺口</li><li>力量转为<b>增肌为主</b>：重量增加、次数 8~10、组间休息拉长</li><li>重点补：肩、背宽度、核心——让体型「上宽下紧」更修长</li><li>目标：体重稳在 68~70kg，肌肉量上升、体脂继续降</li></ul></div></div></div></div><div class="card"><h2>④ 每周训练计划</h2><div class="desc">点标签切换训练日　<em>每周 3 力量 + 3 有氧，力量隔天做</em></div><div class="tabsbox"><input class="r" type="radio" name="g-pl" id="pl-0" checked><input class="r" type="radio" name="g-pl" id="pl-1"><input class="r" type="radio" name="g-pl" id="pl-2"><input class="r" type="radio" name="g-pl" id="pl-3"><div class="tabs"><label class="tab" for="pl-0">力量 A</label><label class="tab" for="pl-1">力量 B</label><label class="tab" for="pl-2">力量 C</label><label class="tab" for="pl-3">有氧</label></div><div class="panes"><div class="pane pn0">
+      <div class="plan-hd"><b>力量 A · 腿 + 核心</b><span class="plan-tag">新增重点</span></div>
+      <div class="ex"><span class="ex-n">深蹲（高脚杯或杠铃）</span><span class="ex-s">4 组 × 10</span></div><div class="ex-t">减脂期最该练的动作，一次调动全身大部分肌肉</div><div class="ex"><span class="ex-n">罗马尼亚硬拉</span><span class="ex-s">4 组 × 10</span></div><div class="ex-t">练臀腿后侧；腰保持中立，感受大腿后侧拉伸</div><div class="ex"><span class="ex-n">保加利亚分腿蹲</span><span class="ex-s">3 组 × 10 / 侧</span></div><div class="ex-t">单腿动作，稳定性差就先扶墙</div><div class="ex"><span class="ex-n">坐姿腿屈伸</span><span class="ex-s">3 组 × 12</span></div><div class="ex-t">收尾充血用，重量不用大</div><div class="ex"><span class="ex-n">站姿提踵</span><span class="ex-s">4 组 × 15</span></div><div class="ex-t">小腿线条，慢起慢落</div><div class="ex"><span class="ex-n">平板支撑</span><span class="ex-s">3 组 × 45 秒</span></div><div class="ex-t">核心稳定，腰不要塌</div><div class="ex"><span class="ex-n">卷腹</span><span class="ex-s">3 组 × 15</span></div><div class="ex-t">幅度不用大，感受腹部发力</div></div><div class="pane pn1">
+      <div class="plan-hd"><b>力量 B · 胸 + 肩 + 三头</b><span class="plan-tag">延续你的胸日</span></div>
+      <div class="ex"><span class="ex-n">平板卧推</span><span class="ex-s">4 组 × 10</span></div><div class="ex-t">主项，现在的 30kg 可以试着往 35kg 走</div><div class="ex"><span class="ex-n">上斜哑铃飞鸟</span><span class="ex-s">4 组 × 12</span></div><div class="ex-t">练上胸，手臂微屈不要锁死</div><div class="ex"><span class="ex-n">绳索下斜上拉</span><span class="ex-s">4 组 × 10</span></div><div class="ex-t">下往上夹，练上胸沟</div><div class="ex"><span class="ex-n">蝴蝶机夹胸</span><span class="ex-s">4 组 × 12</span></div><div class="ex-t">收尾，顶峰收缩停 1 秒</div><div class="ex"><span class="ex-n">坐姿推肩</span><span class="ex-s">4 组 × 10</span></div><div class="ex-t">新加：肩宽了才显「倒三角」，视觉上更修长</div><div class="ex"><span class="ex-n">哑铃侧平举</span><span class="ex-s">4 组 × 15</span></div><div class="ex-t">轻重量多次数，练肩中束</div><div class="ex"><span class="ex-n">绳索下压</span><span class="ex-s">3 组 × 12</span></div><div class="ex-t">三头，手臂围度</div></div><div class="pane pn2">
+      <div class="plan-hd"><b>力量 C · 背 + 二头</b><span class="plan-tag">延续你的背日</span></div>
+      <div class="ex"><span class="ex-n">高位下拉</span><span class="ex-s">5 组 × 12</span></div><div class="ex-t">背宽度的关键，肩胛先下沉再拉</div><div class="ex"><span class="ex-n">坐姿绳索划船</span><span class="ex-s">5 组 × 12</span></div><div class="ex-t">背厚度，拉到最后夹一下肩胛</div><div class="ex"><span class="ex-n">单臂哑铃划船</span><span class="ex-s">4 组 × 10 / 侧</span></div><div class="ex-t">单侧发力更集中，注意别耸肩</div><div class="ex"><span class="ex-n">助力引体向上</span><span class="ex-s">4 组 × 10</span></div><div class="ex-t">辅助重量逐周减少，往自重引体过渡</div><div class="ex"><span class="ex-n">杠铃硬拉</span><span class="ex-s">5 组 × 10</span></div><div class="ex-t">全身性动作，腰背绷紧、不要弓腰</div><div class="ex"><span class="ex-n">面拉</span><span class="ex-s">3 组 × 15</span></div><div class="ex-t">新加：改善圆肩，练后肩上背，体态更挺</div><div class="ex"><span class="ex-n">哑铃弯举</span><span class="ex-s">3 组 × 12</span></div><div class="ex-t">二头收尾</div></div><div class="pane pn3">
+      <div class="plan-hd"><b>有氧 · 每周 3 次</b><span class="plan-tag">降强度、拉时长</span></div>
+      <div class="ex"><span class="ex-n">Z2 慢跑</span><span class="ex-s">2 次 × 40~50 min</span></div><div class="ex-t">心率 130~145，配速大概 7'00&quot;~7'30&quot;——比你现在的 6'16&quot; 慢，但能跑更久</div><div class="ex"><span class="ex-n">HIIT 爬楼梯</span><span class="ex-s">1 次 × 20 min</span></div><div class="ex-t">1 分钟快爬 / 1 分钟慢走 ×10 组，心率冲到 160+</div><div class="ex"><span class="ex-n">日常步数</span><span class="ex-s">≥ 12,000 步</span></div><div class="ex-t">你目前日均 16,255 步，保持住就是最省力的消耗来源</div></div></div></div><div class="week"><div class="wk-h">一周怎么排</div><div class="wk-g"><span class="wd"><b>一</b>力量A</span><span class="wd"><b>二</b>Z2 慢跑</span><span class="wd"><b>三</b>力量B</span><span class="wd rest"><b>四</b>休息</span><span class="wd"><b>五</b>力量C</span><span class="wd"><b>六</b>HIIT</span><span class="wd rest"><b>日</b>休息/徒步</span></div></div></div>
+<div class="card">
+  <h2>⑤ 饮食方案</h2>
+  <div class="desc">减脂 7 分靠吃　<em>不用饿肚子，制造小缺口就行</em></div>
+  <div class="kpis">
+    <div class="kpi"><div class="v">2,200<small>kcal</small></div>
+      <div class="l">阶段一每日</div><div class="e">缺口约 500</div></div>
+    <div class="kpi"><div class="v">2,000<small>kcal</small></div>
+      <div class="l">阶段二每日</div><div class="e">缺口约 700</div></div>
+    <div class="kpi"><div class="v">140<small>g</small></div>
+      <div class="l">蛋白质下限</div><div class="e">1.7g × 体重</div></div>
+  </div>
+  <div class="meal">
+    <div class="ml"><b>早餐</b><span>鸡蛋 2 个 + 全麦主食 + 牛奶/无糖豆浆</span></div>
+    <div class="ml"><b>午餐</b><span>一拳主食 + 一掌瘦肉/鱼 + 两拳蔬菜</span></div>
+    <div class="ml"><b>加餐</b><span>无糖酸奶 / 一把坚果 / 蛋白粉（练后）</span></div>
+    <div class="ml"><b>晚餐</b><span>半拳主食 + 一掌蛋白 + 两拳蔬菜</span></div>
+  </div>
+  <div class="note">
+    · <b>蛋白质是底线</b>：每餐都要有，不够就补蛋白粉；它决定你掉的是脂肪还是肌肉<br>
+    · <b>主食不要断</b>：断了容易掉力气、训练做不动，反而减得慢<br>
+    · <b>每周留 1 顿自由餐</b>：心理上撑得住，才坚持得久<br>
+    · 外食优先选：清蒸/白灼/烤，避开油炸和浓稠酱汁
+  </div>
+</div><div class="card"><h2>⑥ 每周自检清单</h2><div class="desc">做到了就勾上　<em>能勾满 5 项，这周就是合格的</em></div><div class="cks"><label class="ck"><input type="checkbox"><span>力量训练 ≥ 3 次</span></label><label class="ck"><input type="checkbox"><span>Z2 有氧 ≥ 2 次</span></label><label class="ck"><input type="checkbox"><span>HIIT 完成 1 次</span></label><label class="ck"><input type="checkbox"><span>日均步数 ≥ 12,000</span></label><label class="ck"><input type="checkbox"><span>蛋白质达标 ≥ 5 天</span></label><label class="ck"><input type="checkbox"><span>晨起空腹称重（同一时间）</span></label><label class="ck"><input type="checkbox"><span>腰围测量一次</span></label></div></div>
+<div class="card warn">
+  <h2>⑦ 注意事项</h2>
+  <ul class="wn">
+    <li><b>每周减重不超过体重的 1%</b>（你现在约 0.8kg）。掉太快，掉的多半是肌肉，体型会松。</li>
+    <li><b>力量训练不要空腹硬上</b>，练前 1 小时吃点碳水（香蕉/面包）。</li>
+    <li><b>出现心慌、头晕、睡眠变差、静息心率连续升高</b> → 说明恢复不够，先把有氧减 1 次。</li>
+    <li><b>膝盖或腰不舒服</b>：深蹲、硬拉先降重量甚至停，换成腿屈伸、臀桥等替代。</li>
+    <li><b>别只看体重</b>。同时记腰围和体脂，体重会因为水分浮动 1~2kg，很正常。</li>
+    <li>本建议基于你的历史数据推导，<b>不替代医疗意见</b>；有基础疾病请先咨询医生。</li>
+  </ul>
+</div>
+<div class="foot">基于你的真实运动数据生成 · 纯静态页面 · 无 JavaScript<br>
+数据依据：2025-01 ~ 2026-09 共 21 个月 · 器械训练手动记录</div>
+</div>
+</body></html>
