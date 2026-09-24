@@ -21,6 +21,8 @@ h2{font-size:15px;margin:0 0 12px;padding-left:9px;border-left:3px solid var(--a
 .desc{color:var(--dim);font-size:11.5px;margin:-4px 0 10px}
 .desc em{font-style:normal;color:var(--acc);font-weight:700}
 .stat4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+/* 围度格：项数会随量的部位增加，用 3 列比 4 列更耐加 */
+.gtiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
 .st{background:#F7F9FA;border-radius:12px;padding:10px 8px;text-align:center}
 .st b{display:block;font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
 .st b small{font-size:10px;font-weight:700;color:var(--dim);margin-left:1px}
@@ -205,11 +207,12 @@ details.dg>summary:before{content:none}
   <h2>③ 围度（皮尺量的）</h2>
   <div class="desc">2026-09-24 量　体脂秤看不出脂肪堆在哪，围度能　
   <em>腰围是判断「肚子上的脂肪」最直接的指标</em></div>
-  <div class="stat4">
+  <div class="gtiles">
     <div class="st "><b>102<small>cm</small></b><span>胸围</span></div>
     <div class="st warnc"><b>99<small>cm</small></b><span>腰围</span></div>
     <div class="st "><b>101<small>cm</small></b><span>臀围</span></div>
     <div class="st "><b>59<small>cm</small></b><span>腿围</span></div>
+    <div class="st hi"><b>31.5<small>cm</small></b><span>臂围</span></div>
   </div>
   <div class="gr"><span class="gri">腰臀比 WHR</span><span class="grn">0.98</span><span class="gv bad">偏高</span><span class="grr">参考 &lt; 0.90</span></div><div class="gr"><span class="gri">腰高比 WHtR</span><span class="grn">0.59</span><span class="gv bad">偏高</span><span class="grr">参考 &lt; 0.50</span></div>
   <div class="note">
@@ -218,8 +221,8 @@ details.dg>summary:before{content:none}
       都指向「脂肪偏向堆在腹部」，比总体重更能反映代谢风险；<br>
     · 你这次腰围 <b>99cm</b>、臀围 <b>101cm</b>，两者几乎一样宽，
       说明脂肪主要在腰腹——而这恰好是<b>减脂 + 力量训练</b>最容易见效的地方；<br>
-    · 以后看趋势别只盯腰围绝对值，<b>腰臀比和腰高比一起往下走</b>，才说明掉的是腹部脂肪。<br>
-    目前只有这 <b>1 次</b>记录，还标不出趋势；以后每隔 2 周量一次，攒到两次以上我就加一条围度趋势线。<b>量法</b>：腰围取肚脐水平一圈、臀围取臀部最凸处、皮尺贴皮肤但不勒紧、别憋气。<br>
+    · 以后看趋势别只盯腰围绝对值，<b>腰臀比和腰高比一起往下走</b>，才说明掉的是腹部脂肪；<br>
+    · <b>臂围 31.5cm</b> 要跟上面几个反着看：它主要反映上臂肌肉量，<b>越大越好</b>。减脂期的目标是——腰围往下掉、臂围稳住（能涨更好），这说明你掉的是脂肪而不是肌肉。<br>目前只有这 <b>1 次</b>记录，还标不出趋势；以后每隔 2 周量一次，攒到两次以上我就加一条围度趋势线。<b>量法</b>：腰围取肚脐水平一圈、臀围取臀部最凸处、皮尺贴皮肤但不勒紧、别憋气。<br>
     <span style="color:var(--dim2);font-size:10.5px">围度为你手量的单次记录；以上为一般性健康参考，不替代医疗意见。</span>
   </div>
 </div><div class="card"><h2>④ 三个要正视的点</h2><div class="desc">点开看每条的判断依据　<em>按重要程度排序</em></div><details class="dg" style="--dc:#E9615E"><summary>
@@ -296,7 +299,7 @@ details.dg>summary:before{content:none}
     <span class="wd rest"><b>日</b>休息/徒步</span>
   </div>
   <div class="note">
-    · 你现在运动量够（本月 <b>27 次 / 20.2 小时</b>），
+    · 你现在运动量够（本月 <b>28 次 / 21.2 小时</b>），
       但 <b>力量只占很小一部分</b>——这是最该补的短板<br>
     · 有氧把心率压到 130~145、时长拉到 40 分钟以上，减脂效率高于跑快<br>
     · 上周那次山路跑（8.79km / 爬升 109m）就是很好的强度课，一周一次足够
